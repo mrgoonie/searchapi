@@ -1,9 +1,30 @@
 import { z } from "zod";
 
+export const YoutubeSearchOrderSchema = z
+  .enum([
+    "date", // Sort by newest first
+    "viewCount", // Sort by most views
+    "rating", // Sort by highest rating
+    "relevance", // Sort by relevance (default)
+  ])
+  .default("relevance");
+
+export const YoutubeVideoDurationSchema = z
+  .enum([
+    "short", // Under 4 minutes
+    "medium", // Between 4-20 minutes
+    "long", // Over 20 minutes
+    "any", // Any duration (default)
+  ])
+  .default("any");
+
 export const YoutubeSearchParamsSchema = z.object({
   query: z.string().min(1).max(500),
   maxResults: z.number().min(1).max(50).default(10),
   pageToken: z.string().optional(),
+  order: YoutubeSearchOrderSchema,
+  publishedAfter: z.date().optional(),
+  videoDuration: YoutubeVideoDurationSchema,
 });
 
 export const YoutubeVideoSchema = z.object({

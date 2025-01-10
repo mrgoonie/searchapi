@@ -14,6 +14,8 @@ export async function youtubeSearch(params: YoutubeSearchParams): Promise<Youtub
   });
 
   try {
+    const videoDuration =
+      validatedParams.videoDuration === "any" ? undefined : validatedParams.videoDuration;
     const response = await youtube.search.list({
       part: ["snippet", "id"],
       q: validatedParams.query,
@@ -22,6 +24,9 @@ export async function youtubeSearch(params: YoutubeSearchParams): Promise<Youtub
       type: ["video"],
       videoEmbeddable: "true",
       videoSyndicated: "true",
+      order: validatedParams.order,
+      publishedAfter: validatedParams.publishedAfter?.toISOString(),
+      videoDuration: videoDuration,
     });
 
     if (!response.data.items) {
