@@ -1,0 +1,10 @@
+services:
+  savedb:
+    container_name: savedb
+    restart: always
+    build:
+      context: .
+    ports:
+      - "3000:3000"
+    env_file:
+      - .env

@@ -1,0 +1,93 @@
+<html lang="en">
+<!-- HEAD -->
+
+<head>
+  <%- include('common/head', locals) %>
+  <script>
+    // Immediately invoked function to set the theme on page load
+    (function() {
+      function getInitialTheme() {
+        const savedTheme = localStorage.getItem('theme');
+        const systemDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches;
+        return savedTheme === 'dark' || (!savedTheme && systemDarkMode) ? 'dark' : 'light';
+      }
+      const theme = getInitialTheme();
+      document.documentElement.setAttribute('data-mode', theme);
+    })();
+  </script>
+</head>
+
+<!-- BODY -->
+
+<body class="w-full ">
+  <!-- HEADER -->
+  <% if (typeof locals.headerEnabled === 'undefined' || locals.headerEnabled) { %>
+  <%- include('common/header', locals) %>
+  <% } %>
+
+  <!-- PAGE -->
+  <% if (typeof page !== 'undefined') { %>
+  <%- include(page, locals); %>
+  <% } %>
+
+  <!-- IndieBoosting -->
+  <div class="w-full max-w-3xl mx-auto mb-10 text-center">
+    <script src="https://cdn.indieboosting.com/latest/script.js?id=VZTH7M1ILR&maxProducts=9&maxColumns=3&title=My Other Products"></script>
+  </div>
+
+  <!-- FOOTER -->
+  <% if (typeof locals.footerEnabled === 'undefined' || locals.footerEnabled) { %>
+  <%- include('common/footer', locals) %>
+  <% } %>
+
+  <div id="anywhere-home" class=""></div>
+
+  <!-- pre loader start -->
+  <div class="loader-wrapper">
+    <div class="loader">
+    </div>
+    <div class="loader-section section-left"></div>
+    <div class="loader-section section-right"></div>
+  </div>
+  <!-- pre loader end -->
+
+  <!-- Scripts -->
+  <!-- Day.js -->
+  <script src="https://cdn.jsdelivr.net/npm/dayjs@1/dayjs.min.js"></script>
+  <!-- marked.js -->
+  <script src="/js/marked.min.js"></script>
+  <!-- highlight.js -->
+  <script src="/vendor/highlight/highlight.min.js"></script>
+  <!-- jQuery -->
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+  <!-- Slick -->
+  <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css" />
+  <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.css" />
+  <script type="text/javascript" src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+  <!-- Tippy.js -->
+  <script src="https://unpkg.com/@popperjs/core@2"></script>
+  <script src="https://unpkg.com/tippy.js@6"></script>
+  <!-- Chart.js -->
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+  <!-- Main JS -->
+  <script defer src="/assets/js/plugins/gsap.min.js"></script>
+  <!-- Users -->
+  <script defer src="/assets/js/auth.js"></script>
+  <!-- Drawers -->
+  <script defer src="/assets/js/plugins/drawers.js"></script>
+  <!-- Modals -->
+  <script defer src="/assets/js/plugins/modals.js"></script>
+  <!-- Tippy -->
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      tippy('.tippy', {
+        animation: 'fade',
+        duration: 300,
+        interactive: true,
+      });
+    });
+  </script>
+</body>
+
+</html>

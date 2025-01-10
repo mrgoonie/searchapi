@@ -1,0 +1,77 @@
+@tailwind base;
+
+@layer base {
+  * {
+    @apply font-sans;
+  }
+  h1 {
+    @apply text-4xl;
+  }
+  h2 {
+    @apply text-3xl;
+  }
+  h3 {
+    @apply text-2xl;
+  }
+  h4 {
+    @apply text-xl;
+  }
+  h5 {
+    @apply text-lg;
+  }
+  a {
+    @apply text-blue-600 dark:text-blue-400;
+  }
+  p {
+    @apply mt-4 mb-8;
+  }
+  /* Transition for all links and buttons */
+  a,
+  button {
+    @apply transition-all duration-300;
+  }
+  input {
+    @apply outline-none focus:ring-0 p-2 dark:bg-gray-700 dark:text-white; /* Added dark mode support */
+  }
+  input::placeholder {
+    @apply dark:text-gray-400; /* Added dark mode support */
+  }
+}
+
+@tailwind components;
+@tailwind utilities;
+
+.absolute-center {
+  @apply absolute inset-0 flex items-center justify-center;
+}
+.fixed-center {
+  @apply fixed inset-0 flex items-center justify-center;
+}
+
+.main-nav-area ul li.active a,
+.header-style-one.case-studies .main-nav-area ul li.active > a.fluxi-dropdown-main-element,
+.mainmenu-nav li.active a {
+  @apply !text-brand-primary;
+}
+
+.slick-dots li button:before {
+  @apply !text-black dark:!text-gray-300;
+}
+
+.shape-area {
+  @apply pointer-events-none;
+}
+.container {
+  @apply relative z-[1];
+}
+
+.group-ad-item {
+  background: var(--pricing-single-bg);
+}
+
+.group-ad-category {
+  @apply cursor-pointer text-xl bg-gray-100 dark:bg-gray-700 rounded-2xl py-2 px-4 transition-colors hover:bg-brand-secondary hover:text-white;
+}
+.group-ad-category.active {
+  @apply bg-brand-secondary text-white;
+}

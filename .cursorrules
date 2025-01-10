@@ -1,0 +1,63 @@
+## Project Development Information
+
+Main domain: SaveDB.site
+
+### Tech stack
+- Node.js
+- Express.js
+- Prisma (PostgreSQL)
+- EJS
+- TailwindCSS
+- Commitlint
+- Swagger
+- Docker
+- Docker Compose
+
+### When working with EJS
+always use icons from https://remixicon.com/
+always use tailwindcss for styling
+
+### When working with Tailwind or CSS
+always implement responsive layout with mobile-first approach
+always implement dark mode
+
+### For Express.js project
+always import prisma client with: `import { prisma } from "@/lib/db";`
+always use async/await for better readability and performance
+always use `next()` for error handling of all routers
+always use try-catch for fallback error handling
+always use zod for validation
+always generate swagger docs for all APIs
+always use `bearerAuth` and `ApiKeyAuth` for swagger security
+
+## About The Project
+
+### Description
+
+SaveDB.site is a tool that provides API to backup databases and upload to cloud storages.
+
+### Support databases
+- PostgreSQL
+
+### Support cloud storages
+- AWS S3
+- Cloudflare R2
+
+### Slogans
+1. "Just save it somewhere and hope we will never need it."
+
+### Workflow:
+- A user inputs a database connection url
+- The tool will backup the database
+- The tool will upload the backup to cloud storage
+
+### Privacy Policy
+- We don't store any data
+- We don't collect any data
+- We don't use any data
+- We made this as simple as possible: connect to a database, backup it, upload it to cloud storage. That's it.
+
+### Support
+- If you have any questions or feedback, please contact us at [SaveDB.site](https://savedb.site).
+- If you have any issues or bugs, please report them to us.
+- If you have any suggestions or feature requests, please submit them to us.
