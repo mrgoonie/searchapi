@@ -1,6 +1,6 @@
 import express from "express";
 
-import { apiDatabaseBackupRouter } from "./api-backup";
+import { apiGoogleRouter } from "./api-google";
 import { apiHealthzRouter } from "./api-healthz";
 import { apiKeyRouter } from "./api-key";
 import { apiPaymentRouter } from "./api-payment";
@@ -19,4 +19,4 @@ apiRouter.use("/api/v1/profile", apiProfileRouter);
 apiRouter.use("/api/v1/upload", apiUploadRouter);
 apiRouter.use("/api/v1/api_key", apiKeyRouter);
 apiRouter.use("/api/v1/payments", apiPaymentRouter);
-apiRouter.use("/api/v1/database-backup", apiDatabaseBackupRouter);
+apiRouter.use("/api/v1/google", apiGoogleRouter);

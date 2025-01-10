@@ -6,12 +6,12 @@ import { env } from "@/env";
 // Configure the connection pool with better defaults
 const pool = new pg.Pool({
   connectionString: env.DATABASE_URL,
-  max: 20,
+  max: 200,
   min: 5,
-  idleTimeoutMillis: 30000,
-  connectionTimeoutMillis: 10000,
-  statement_timeout: 10000, // Add statement timeout
-  query_timeout: 10000, // Add query timeout
+  idleTimeoutMillis: 60000,
+  connectionTimeoutMillis: 60000,
+  statement_timeout: 30000, // Add statement timeout
+  query_timeout: 60000, // Add query timeout
   allowExitOnIdle: true,
 });
 

@@ -1,6 +1,6 @@
 ## Project Development Information
 
-Main domain: SaveDB.site
+Main domain: SearchAPI.site
 
 ### Tech stack
 - Node.js
@@ -25,6 +25,7 @@ always use async/await for better readability and performance
 always use `next()` for error handling of all routers
 always use try-catch for fallback error handling
 always use zod for validation
+write zod schemas in a separate file to make it easy to share
 always generate swagger docs for all APIs
 always use `bearerAuth` and `ApiKeyAuth` for swagger security
 
@@ -32,7 +33,7 @@ always use `bearerAuth` and `ApiKeyAuth` for swagger security
 
 ### Description
 
-SaveDB.site is a tool that provides API to backup databases and upload to cloud storages.
+SearchAPI.site is a tool that provides API to search on some popular platforms such as Google, Bing, Yahoo, etc.
 
 ### Support databases
 - PostgreSQL
@@ -41,21 +42,11 @@ SaveDB.site is a tool that provides API to backup databases and upload to cloud 
 - AWS S3
 - Cloudflare R2
 
-### Slogans
-1. "Just save it somewhere and hope we will never need it."
+### API Docs
 
-### Workflow:
-- A user inputs a database connection url
-- The tool will backup the database
-- The tool will upload the backup to cloud storage
-
-### Privacy Policy
-- We don't store any data
-- We don't collect any data
-- We don't use any data
-- We made this as simple as possible: connect to a database, backup it, upload it to cloud storage. That's it.
+- [Swagger UI](https://searchapi.site/api-docs)
 
 ### Support
-- If you have any questions or feedback, please contact us at [SaveDB.site](https://savedb.site).
+- If you have any questions or feedback, please contact me at [@goon_nguyen](https://x.com/goon_nguyen).
 - If you have any issues or bugs, please report them to us.
 - If you have any suggestions or feature requests, please submit them to us.

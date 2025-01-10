@@ -1,28 +1,14 @@
-# SaveDB.site
+# SearchAPI.site
 
 ### Description
 
-[SaveDB.site](https://savedb.site) is a tool that provides API to backup databases and upload to cloud storages.
+[SearchAPI.site](https://searchapi.site) is a tool that provides API to search on some popular platforms such as Google, Youtube, Bing, Yahoo, etc.
 
-> *"Just save it somewhere and hope we will never need it."*
+> From the author: I made it for N8N or any automation workflows.
 
-### Support databases
-- [x] PostgreSQL
-- [ ] MySQL
-- [ ] MariaDB
-- [ ] MongoDB
+## API Docs
 
-### Support cloud storages
-- [x] AWS S3
-- [x] Cloudflare R2
-- [ ] Google Cloud Storage
-- [ ] Azure Blob Storage
-- [ ] MinIO
-- [ ] Backblaze B2
-
-### Workflow:
-
-We made this as simple as possible: connect to a database, backup it, upload it to cloud storage. **That's it!**
+https://searchapi.site/api-docs
 
 ## Stack
 
@@ -68,13 +54,8 @@ dx up
 
 ## CI/CD
 
-- [ ] Github Actions: Create Pull Request to `main` branch will trigger a build and push to `preview` environment
-- [ ] Github Actions: Merge Pull Request to `main` branch will trigger a build and push to `production` environment
-
-## Privacy Policy
-- We don't store any data
-- We don't collect any data
-- We don't use any data
+- [x] Github Actions: Create Pull Request to `main` branch will trigger a build and push to `preview` environment
+- [x] Github Actions: Merge Pull Request to `main` branch will trigger a build and push to `production` environment
 
 ## Author
 
@@ -85,8 +66,8 @@ Please feel free to contribute to this project!
 
 ## Check out my other products
 
+- [IndieBoosting.com](https://indieboosting.com) - A platform that help you reach your target audience, and accelerate growth effortlessly.
 - [DigiCord AI](https://digicord.site) - The Most Useful AI Chatbot on Discord
-- [IndieBacklink.com](https://indiebacklink.com) - Indie Makers Unite: Feature, Support, Succeed
 - [BoostTogether.com](https://boosttogether.com) - The Power of WE in Advertising
 - [TopRanking.ai](https://topranking.ai) - AI Directory, listing AI products
 - [ZII.ONE](https://zii.one) - Personalized Link Shortener
@@ -94,5 +75,6 @@ Please feel free to contribute to this project!
 - [ReadTube.me](https://readtube.me) - Write blog articles based on Youtube videos
 - [AIVN.Site](https://aivn.site) - Face Swap, Remove BG, Photo Editor,…
 - [GetViral.Now](https://getviral.now) - KOL booking better together!
+- [SaveDB.site](https://savedb.site) - API to backup your database and store it in the cloud
 
 Thank you!
