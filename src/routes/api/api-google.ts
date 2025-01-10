@@ -22,6 +22,8 @@ export const apiGoogleRouter = express.Router();
  *         application/json:
  *           schema:
  *             type: object
+ *             required:
+ *               - query
  *             properties:
  *               query:
  *                 type: string
@@ -71,6 +73,8 @@ apiGoogleRouter.post("/", validateSession, apiKeyAuth, async (req, res, next) =>
  *         application/json:
  *           schema:
  *             type: object
+ *             required:
+ *               - query
  *             properties:
  *               query:
  *                 type: string
@@ -120,26 +124,33 @@ apiGoogleRouter.post("/images", validateSession, apiKeyAuth, async (req, res, ne
  *         application/json:
  *           schema:
  *             type: object
+ *             required:
+ *               - query
  *             properties:
  *               query:
  *                 type: string
+ *                 description: Search keyword
  *               maxResults:
  *                 type: number
+ *                 description: Maximum number of results to return
  *                 default: 10
  *               pageToken:
  *                 type: string
+ *                 description: Token for pagination
  *               order:
  *                 type: string
+ *                 enum: [date, viewCount, rating, relevance]
+ *                 description: Sort order
  *                 default: "relevance"
  *               publishedAfter:
  *                 type: number
- *                 description: Number of days to filter videos from. E.g., 3 for videos published within last 3 days
+ *                 description: Number of days to filter videos from
  *                 example: 3
  *               videoDuration:
  *                 type: string
  *                 enum: [short, medium, long, any]
- *                 description: Filter by video duration. short (< 4min), medium (4-20min), long (> 20min)
- *                 default: any
+ *                 description: Filter by video duration
+ *                 default: "any"
  *     responses:
  *       200:
  *         description: Successful YouTube search
