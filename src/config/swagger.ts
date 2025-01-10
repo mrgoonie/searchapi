@@ -14,7 +14,7 @@ export const swaggerOptions = (options?: Options) => ({
       version: options?.version || pkg.version,
       description:
         options?.description ||
-        `This is a simple CRUD API application made with Express and documented with Swagger. You will need an API key to use, go to <a href='${env.BASE_URL}/profile'>${env.BASE_URL}/profile</a> to create one.`,
+        `You will need an API key to use, go to <a href='${env.BASE_URL}/profile'>${env.BASE_URL}/profile</a> to create one.`,
       license: {
         name: "MIT",
         url: "https://spdx.org/licenses/MIT.html",

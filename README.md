@@ -6,6 +6,10 @@
 
 > From the author: I made it for N8N or any automation workflows.
 
+## API Docs
+
+https://searchapi.site/api-docs
+
 ## Stack
 
 - [x] Node.js (TypeScript)
