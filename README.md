@@ -22,6 +22,19 @@ https://searchapi.site/api-docs
 - [x] Commitlint
 - [x] Swagger UI
 
+## Available platforms
+- [x] Google - Web Search
+- [x] Google - Image Search
+- [x] Google - YouTube Search
+- [ ] Google - Maps Search
+- [ ] Bing - Web Search
+- [ ] Bing - Image Search
+- [ ] Reddit
+- [ ] X/Twitter
+- [ ] Facebook
+- [ ] Instagram
+- [ ] TikTok
+
 ## Development
 
 Create `.env` from `.example.env`

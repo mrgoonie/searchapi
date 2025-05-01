@@ -35,8 +35,18 @@ always use `bearerAuth` and `ApiKeyAuth` for swagger security
 
 SearchAPI.site is a tool that provides API to search on some popular platforms such as Google, Bing, Yahoo, etc.
 
-### Support databases
-- PostgreSQL
+### Available platforms
+- [x] Google - Web Search
+- [x] Google - Image Search
+- [x] Google - YouTube Search
+- [ ] Google - Maps Search
+- [ ] Bing - Web Search
+- [ ] Bing - Image Search
+- [ ] Reddit
+- [ ] X/Twitter
+- [ ] Facebook
+- [ ] Instagram
+- [ ] TikTok
 
 ### Support cloud storages
 - AWS S3
