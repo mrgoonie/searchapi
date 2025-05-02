@@ -28,7 +28,7 @@ jobs:
         uses: "digitopvn/diginext-actions@v2"
         with:
           api_key: ${{ secrets.DX_API_KEY }}
-          cluster: dxupvn
+          cluster: dxupprod
           registry: digitopdockerhub
           deploy_env: prod
           tail: true
