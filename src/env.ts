@@ -36,6 +36,7 @@ export const envSchema = z.object({
   POLAR_ORGANIZATION_ID: z.string(),
   POLAR_SECRET: z.string(),
   POLAR_ACCESS_TOKEN: z.string(),
+  BING_API_KEY: z.string(),
 });
 export type Env = z.infer<typeof envSchema>;
 
@@ -63,6 +64,7 @@ const {
   POLAR_ORGANIZATION_ID,
   POLAR_ACCESS_TOKEN,
   POLAR_SECRET,
+  BING_API_KEY,
   ...clientEnv
 } = env;
 
