@@ -27,6 +27,19 @@ export const apiGoogleRouter = express.Router();
  *             properties:
  *               query:
  *                 type: string
+ *               limit:
+ *                 type: number
+ *                 default: 10
+ *               offset:
+ *                 type: number
+ *                 default: 0
+ *               sort:
+ *                 type: string
+ *                 default: "date:d"
+ *               from_date:
+ *                 type: string
+ *               to_date:
+ *                 type: string
  *     responses:
  *       200:
  *         description: Successful search
@@ -77,6 +90,19 @@ apiGoogleRouter.post("/", validateSession, apiKeyAuth, async (req, res, next) =>
  *               - query
  *             properties:
  *               query:
+ *                 type: string
+ *               limit:
+ *                 type: number
+ *                 default: 10
+ *               offset:
+ *                 type: number
+ *                 default: 0
+ *               sort:
+ *                 type: string
+ *                 default: "date:d"
+ *               from_date:
+ *                 type: string
+ *               to_date:
  *                 type: string
  *     responses:
  *       200:

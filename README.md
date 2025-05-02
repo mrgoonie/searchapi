@@ -27,11 +27,12 @@ https://searchapi.site/api-docs
 - [x] Google - Image Search
 - [x] Google - YouTube Search
 - [ ] Google - Maps Search
-- [ ] Bing - Web Search
+- [x] Bing - Web Search
 - [ ] Bing - Image Search
 - [ ] Reddit
 - [ ] X/Twitter
-- [ ] Facebook
+- [ ] Facebook Search
+- [ ] Facebook Group Search
 - [ ] Instagram
 - [ ] TikTok
 
