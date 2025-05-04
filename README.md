@@ -22,8 +22,10 @@ https://searchapi.site/api-docs
 - [x] Commitlint
 - [x] Swagger UI
 
-## Available platforms
+## Features
 - [x] Google - Web Search
+  - [x] Search a single keyword
+  - [ ] Search multiple keywords
 - [x] Google - Image Search
 - [x] Google - YouTube Search
 - [ ] Google - Maps Search
