@@ -4,7 +4,8 @@ module.exports = {
   theme: {
     extend: {
       fontFamily: {
-        // sans: ["Space Mono", "sans-serif"],
+        heading: ["Bricolage Grotesque", "sans-serif"],
+        body: ["Geologica", "sans-serif"],
       },
       colors: {
         "brand-primary": "#FE8009",

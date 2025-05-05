@@ -1,8 +1,17 @@
+@import url("https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,200..800&family=Geologica:wght@100..900&display=swap");
+
 @tailwind base;
 
 @layer base {
   * {
-    @apply font-sans;
+    @apply font-body;
+  }
+  h1,
+  h2,
+  h3,
+  h4,
+  h5 {
+    @apply font-heading;
   }
   h1 {
     @apply text-4xl;

@@ -12,9 +12,8 @@ import { pageRouter } from "./router";
 dayjs.extend(localizedFormat);
 
 pageRouter.get("/pricing", verifyRequest, validateSession, async (_req, res) => {
-  if (!res.locals.user) return res.redirect("/login");
-  const { id } = res.locals.user;
-  const user = await getUser(id);
+  const { id } = res.locals.user || {};
+  const user = id ? await getUser(id) : null;
 
   const plans = await getAvailablePricingPlans();
   plans.forEach((plan) => {
