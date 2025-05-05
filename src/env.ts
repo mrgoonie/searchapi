@@ -29,6 +29,8 @@ export const envSchema = z.object({
   CLOUDFLARE_CDN_BUCKET_NAME: z.string(),
   CLOUDFLARE_CDN_ENDPOINT_URL: z.string(),
   CLOUDFLARE_CDN_BASE_URL: z.string(),
+  ELASTIC_EMAIL_APIKEY: z.string(),
+  ELASTIC_EMAIL_FROM: z.string().default("noreply@searchapi.site"),
   WEBSHAREIO_API_KEY: z.string(),
   PROXY_URL: z.string(),
   OPENROUTER_KEY: z.string(),
@@ -42,6 +44,7 @@ export type Env = z.infer<typeof envSchema>;
 
 export const env: Env = envSchema.parse(process.env);
 
+// Extract server env variables
 const {
   DATABASE_URL,
   GITHUB_CLIENT_ID,
@@ -57,6 +60,8 @@ const {
   CLOUDFLARE_CDN_SECRET_KEY,
   CLOUDFLARE_CDN_BUCKET_NAME,
   CLOUDFLARE_CDN_ENDPOINT_URL,
+  ELASTIC_EMAIL_APIKEY,
+  ELASTIC_EMAIL_FROM,
   WEBSHAREIO_API_KEY,
   PROXY_URL,
   OPENROUTER_KEY,

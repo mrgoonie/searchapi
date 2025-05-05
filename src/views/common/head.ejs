@@ -40,7 +40,6 @@
 <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css" />
 <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.css" />
 
-<% if (locals.clientEnv.NODE_ENV === 'production') { %>
 <!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-PZQ9XM9YPN"></script>
 <script>
@@ -51,7 +50,7 @@
   }
   gtag('js', new Date());
 
-  gtag('config', 'G-PZQ9XM9YPN');
+  gtag('config', 'G-G5RX088ERK');
 </script>
 
 <!-- Posthog -->
@@ -75,9 +74,8 @@
       e._i.push([i, s, a])
     }, e.__SV = 1)
   }(document, window.posthog || []);
-  posthog.init('phc_q3edr5poxgTmQzzq0Nrz8Bu6tovjjov7k9rPGKorQiP', {
+  posthog.init('phc_xvwqPHJisCu48EfjgckqtZ3pdGQNnUB4Q83sDxgyfmv', {
     api_host: 'https://us.i.posthog.com',
     person_profiles: 'identified_only' // or 'always' to create profiles for anonymous users as well
   })
 </script>
-<% } %>
