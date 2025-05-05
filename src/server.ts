@@ -19,6 +19,7 @@ import { pageRouter } from "@/routes/pages";
 
 import { swaggerOptions } from "./config";
 import { fetchListAIModels } from "./lib/ai/models";
+import { initRedis } from "./lib/redis";
 import { polarWebhookRouter } from "./routes/webhooks/polar-webhook";
 
 declare global {
@@ -36,9 +37,8 @@ declare global {
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
-// sync subscription plans in database with Polar
-createInitialPlans();
-// syncPlans();
+// redis
+initRedis();
 
 const app = express();
 
@@ -84,6 +84,8 @@ app.use((error: any, _req: express.Request, res: express.Response, _next: expres
 
 // start server
 async function startServer() {
+  // sync subscription plans in database with Polar
+  await createInitialPlans();
   await initWorkspacePermissions();
   await fetchListAIModels({ debug: true });
 

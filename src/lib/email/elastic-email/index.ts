@@ -1,3 +1,4 @@
+// @ts-ignore
 import * as ElasticEmail from "@elasticemail/elasticemail-client";
 
 import { env } from "@/env";
@@ -20,7 +21,7 @@ export default async function elasticSend({
   content,
   to,
   subject,
-  from = process.env.ELASTIC_EMAIL_FROM,
+  from = env.ELASTIC_EMAIL_FROM,
 }: IElasticSend) {
   try {
     return await new Promise((resolve, reject) => {
@@ -50,7 +51,8 @@ export default async function elasticSend({
         },
       });
 
-      const callback = function (error, data, response) {
+      // eslint-disable-next-line no-unused-vars
+      const callback = function (error: any, data: any, _response: any) {
         if (error) {
           reject(error);
         } else {

@@ -4,6 +4,7 @@ import { validateSession } from "@/lib/auth";
 import { googleSearch, googleSearchImages } from "@/lib/google";
 import { youtubeSearch } from "@/lib/google/youtube-search";
 import { apiKeyAuth } from "@/middlewares/api_key_auth";
+import { checkPlanLimits } from "@/middlewares/check-plan-limits";
 
 // Google Search API Router
 // Tag: GoogleSearch
@@ -59,7 +60,7 @@ export const apiGoogleRouter = express.Router();
  *       500:
  *         description: Server error
  */
-apiGoogleRouter.post("/", validateSession, apiKeyAuth, async (req, res, next) => {
+apiGoogleRouter.post("/", validateSession, apiKeyAuth, checkPlanLimits, async (req, res, next) => {
   try {
     const results = await googleSearch(req.body.query);
     return res.status(200).json({
@@ -123,18 +124,24 @@ apiGoogleRouter.post("/", validateSession, apiKeyAuth, async (req, res, next) =>
  *       500:
  *         description: Server error
  */
-apiGoogleRouter.post("/images", validateSession, apiKeyAuth, async (req, res, next) => {
-  try {
-    const results = await googleSearchImages(req.body.query);
-    return res.status(200).json({
-      success: true,
-      message: "Results of Google Search Images",
-      data: results,
-    });
-  } catch (error) {
-    next(error);
+apiGoogleRouter.post(
+  "/images",
+  validateSession,
+  apiKeyAuth,
+  checkPlanLimits,
+  async (req, res, next) => {
+    try {
+      const results = await googleSearchImages(req.body.query);
+      return res.status(200).json({
+        success: true,
+        message: "Results of Google Search Images",
+        data: results,
+      });
+    } catch (error) {
+      next(error);
+    }
   }
-});
+);
 
 /**
  * @swagger
@@ -196,29 +203,35 @@ apiGoogleRouter.post("/images", validateSession, apiKeyAuth, async (req, res, ne
  *       500:
  *         description: Server error
  */
-apiGoogleRouter.post("/youtube", validateSession, apiKeyAuth, async (req, res, next) => {
-  try {
-    // Calculate publishedAfter date if days are specified
-    let publishedAfter: Date | undefined;
-    if (req.body.publishedAfter) {
-      publishedAfter = new Date();
-      publishedAfter.setDate(publishedAfter.getDate() - req.body.publishedAfter);
-    }
+apiGoogleRouter.post(
+  "/youtube",
+  validateSession,
+  apiKeyAuth,
+  checkPlanLimits,
+  async (req, res, next) => {
+    try {
+      // Calculate publishedAfter date if days are specified
+      let publishedAfter: Date | undefined;
+      if (req.body.publishedAfter) {
+        publishedAfter = new Date();
+        publishedAfter.setDate(publishedAfter.getDate() - req.body.publishedAfter);
+      }
 
-    const results = await youtubeSearch({
-      query: req.body.query,
-      maxResults: req.body.maxResults || 50,
-      pageToken: req.body.pageToken,
-      order: req.body.order || "viewCount",
-      publishedAfter,
-      videoDuration: req.body.videoDuration || "any",
-    });
-    return res.status(200).json({
-      success: true,
-      message: "Results of YouTube Search",
-      data: results,
-    });
-  } catch (error) {
-    next(error);
+      const results = await youtubeSearch({
+        query: req.body.query,
+        maxResults: req.body.maxResults || 50,
+        pageToken: req.body.pageToken,
+        order: req.body.order || "viewCount",
+        publishedAfter,
+        videoDuration: req.body.videoDuration || "any",
+      });
+      return res.status(200).json({
+        success: true,
+        message: "Results of YouTube Search",
+        data: results,
+      });
+    } catch (error) {
+      next(error);
+    }
   }
-});
+);
