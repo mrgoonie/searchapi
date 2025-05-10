@@ -35,9 +35,9 @@ export async function createPaymentAndOrder(polarCheckoutId: string) {
   // send a success email
   if (updatedOrder.user.email) {
     elasticSend({
-      from: "noreply@vidcap.xyz",
+      from: "noreply@searchapi.site",
       to: updatedOrder.user.email,
-      subject: "VidCap.xyz - Payment Success",
+      subject: "SearchAPI.site - Payment Success",
       content: `
         <p>Hi <strong>${updatedOrder.user.name}</strong>,</p>
         <p>Thank you for your payment of <strong>$${
@@ -50,7 +50,7 @@ export async function createPaymentAndOrder(polarCheckoutId: string) {
           <li><strong>Order Total:</strong> $${payment.amount}</li>
           <li><strong>Order Status:</strong> ${payment.status}</li>
         </ul>
-        <p>Thanks for using VidCap.xyz!</p>
+        <p>Thanks for using SearchAPI.site!</p>
       `,
     }).catch((e) => {
       console.error("Failed to send email", e);
