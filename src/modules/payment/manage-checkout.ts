@@ -52,6 +52,8 @@ export async function createPaymentAndOrder(polarCheckoutId: string) {
         </ul>
         <p>Thanks for using VidCap.xyz!</p>
       `,
+    }).catch((e) => {
+      console.error("Failed to send email", e);
     });
   }
 
